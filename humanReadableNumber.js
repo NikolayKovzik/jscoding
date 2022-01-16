@@ -5,7 +5,6 @@ function toReadable(number) {
 
     let arr = String(number).split('');
 
-    console.log(number);
 
     if(number>=0 && number<=19) {
         switch(number) {
@@ -98,5 +97,9 @@ console.log(toReadable(899));
 console.log(toReadable(456));
 console.log(toReadable(350));
 console.log(toReadable(301));
+console.log(toReadable(101));
+console.log(toReadable(1));
+console.log(toReadable(98));
+console.log(toReadable(306));
 
 
