@@ -8,27 +8,8 @@
   <body>
 
   <script >
-      function add(num1, num2) {
-  
-             let arr1 = num1.toString().split('');
-             let arr2 = num2.toString().split('');
               
-              for(let i = 0; i < arr1.length && i < arr2.length; i++ ){
-                
-                arr1[arr1.length-1-i] = +arr1[arr1.length-1-i] + +arr2[arr2.length-1-i];
-              }
               
-              return +arr1.join('');
-            }
-
-
-
-            console.log(add(2, 11)); //13
-            console.log(add(26, 39)); //515
-            console.log(add(122, 81)); //1103
-            console.log(add(1222, 30277)); //31499
-
-
   </script>
   </body>
 </html>
