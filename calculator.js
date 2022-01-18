@@ -18,10 +18,10 @@ function Calculator() {
             return +arr[0] - +arr[1];
         }
         
-        for(let i=0; i<this.operators.length; i++) {
+        for(let i=0; i < this.operators.length; i++) {
              if(str.includes(this.operators[i])) {
                 arr = str.split(this.operators[i]);
-                return this.functions[i](arr[0], arr[1]);
+                return this.functions[i](+arr[0], +arr[1]);
              }
         }
     }
@@ -34,9 +34,13 @@ function Calculator() {
 
 
 let powerCalc = new Calculator;
-powerCalc.addMethod("*", (a, b) => a * b);
-powerCalc.addMethod("/", (a, b) => a / b);
-powerCalc.addMethod("**", (a, b) => a ** b);
+powerCalc.addMethod(" * ", (a, b) => a * b);
+powerCalc.addMethod(" / ", (a, b) => a / b);
+powerCalc.addMethod(" ** ", (a, b) => a ** b);
 
-let result = powerCalc.calculate("2 ** 3");
-console.log( result ); 
+
+console.log( powerCalc.calculate("2 ** 3") ); 
+console.log( powerCalc.calculate("3 ** 4") ); 
+console.log( powerCalc.calculate("2 - 1") ); 
+console.log( powerCalc.calculate("12 / 3") ); 
+console.log( powerCalc.calculate("17 * 2") ); 
