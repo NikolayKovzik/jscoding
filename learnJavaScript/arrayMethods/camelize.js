@@ -1,4 +1,6 @@
-
+/* Напишите функцию camelize(str), которая преобразует строки вида «my-short-string» в «myShortString».
+   То есть дефисы удаляются, а все слова после них получают заглавную букву.
+*/
 function camelize (str) {
 
  let arrWithoutDash = str.split("-");

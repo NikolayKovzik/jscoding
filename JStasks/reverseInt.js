@@ -1,3 +1,4 @@
+/*развернуть число на месте */
 
 function reverseInt(number) {
 

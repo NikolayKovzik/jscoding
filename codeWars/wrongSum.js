@@ -1,3 +1,14 @@
+/*In simple terms, our method does not like the principle of carrying over numbers 
+and just writes down every number it calculates.
+You may assume both integers are positive integers.
+
+examples:
+16 + 18 = 2 14
+26 + 39 = 5 15
+122 + 81 = 1 10 3
+*/
+
+
 function add(num1, num2) {
   
     let arr1 = num1.toString().split('');
