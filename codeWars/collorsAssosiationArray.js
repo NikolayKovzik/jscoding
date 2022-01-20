@@ -12,12 +12,3 @@ function colourAssociation(array) {
   });
 }
 
-
-
-/* or 
-
-function colourAssociation(array){
- return array.map( (item) => ( {[item[0]] : item[1]}) );
-}
-
-*/
