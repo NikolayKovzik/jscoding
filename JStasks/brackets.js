@@ -66,24 +66,6 @@ function check(str, bracketsConfig) {
 
 
 
-// solution from top
-/*
-function check(str, bracketsConfig) {
-    const arrPair = bracketsConfig.map((pair) => pair.join(''))//?
-    for (let i = 0; i < arrPair.length;) {
-      if (str.includes(arrPair[i])) {
-        str = str.replace(arrPair[i], '')
-        i = 0
-      }
-      else { i++ }
-    }
-    return Boolean(!str.length);
-  }
-
-  */
-
-
-
 
 // solution from top
   /*
@@ -98,3 +80,22 @@ function check(str, bracketsConfig) {
         return stack.length === 0;
     }
     */
+
+
+
+// solution from top
+/*
+function check(str, bracketsConfig) {
+    const arrPair = bracketsConfig.map((pair) => pair.join('')
+    for (let i = 0; i < arrPair.length;) {
+      if (str.includes(arrPair[i])) {
+        str = str.replace(arrPair[i], '')
+        i = 0
+      }
+      else { i++ }
+    }
+    return Boolean(!str.length);
+  }
+
+  */
+
