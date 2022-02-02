@@ -37,34 +37,22 @@ You don't have to consider negative numbers
 
 
 function convert(input, source, target) {
-    const DECIMAL = '0123456789';
-    let sourceBase = source.length;
     let targetBase = target.length;
     let result = [];
     
-    if(source!== DECIMAL){
-      input = input.split('').reverse().reduce((result,current,index)=>{
-        return result + source.indexOf(current)*Math.pow(sourceBase,index);
-                              },0);
-    }
-
-    if(target === DECIMAL)
-        return input.toString();
-
-    input = +input;
+    input = input.split('').reverse().reduce((result,current,index)=>{
+      return result + source.indexOf(current)*Math.pow(source.length,index);
+                            },0);
 
     if(input < targetBase)
-        return target[input].toString();
-
+      return target[input].toString();
+  
     while(input >= targetBase){
-
         result.push(target[input%targetBase]);
         input = Math.floor(input/targetBase);
     }
     result.push(target[input]);
-
     return result.reverse().join('');
-    
   }
 
 
