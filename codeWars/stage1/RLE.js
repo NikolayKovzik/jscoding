@@ -17,13 +17,7 @@
 
 
 var runLengthEncoding = function (str) {
-
-    let result = [];
-    while (str) {
-        let coincidence = str.match(/(.)\1*/);
-        result.push([coincidence[0].length, coincidence[1]]);
-        str = str.slice(coincidence[0].length);
-    }
-
-    return result
+    return (str.match(/(.)\1*/g) || []).map((coincidence)=>{
+      return [coincidence.length, coincidence[0]]
+    })
 }
