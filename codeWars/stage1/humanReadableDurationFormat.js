@@ -51,7 +51,7 @@ function formatDuration(timestamp) {
   } else {
     return Object.entries(time).map((entry) => {
       return entry.reverse().join(' ')
-    }).join(', ').replace(/, ([^,]*)$/, ' and '+'$2')
+    }).join(', ').replace(/, ([^,]*)$/, ' and '+'$1')
   }
 }
 
