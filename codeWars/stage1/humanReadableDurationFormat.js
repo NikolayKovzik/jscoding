@@ -44,17 +44,14 @@ function CreateTimeObject(timestamp) {
 
 
 function formatDuration(timestamp) {
-
   if (!timestamp) return 'now';
-
   let time = new CreateTimeObject(timestamp)
-  let res;
   if (Object.keys(time).length == 1) {
     return `${Object.values(time)[0]} ${Object.keys(time)[0]}`
   } else {
     return Object.entries(time).map((entry) => {
       return entry.reverse().join(' ')
-    }).join(', ').replace(/(, )([^,]*)?$/, ' and '+'$2')
+    }).join(', ').replace(/, ([^,]*)$/, ' and '+'$2')
   }
 }
 
