@@ -46,15 +46,13 @@ function CreateTimeObject(timestamp) {
 function formatDuration(timestamp) {
   if (!timestamp) return 'now';
   let time = new CreateTimeObject(timestamp)
-  if (Object.keys(time).length == 1) {
-    return `${Object.values(time)[0]} ${Object.keys(time)[0]}`
-  } else {
-    return Object.entries(time).map((entry) => {
-      return entry.reverse().join(' ')
-    }).join(', ').replace(/, ([^,]*)$/, ' and '+'$1')
-  }
+
+  return Object.entries(time).map((entry) => {
+    return entry.reverse().join(' ')
+  }).join(', ').replace(/, ([^,]*)$/, ' and ' + '$1')
+
 }
 
 
-console.log(formatDuration(60*60 + 60))
+console.log(formatDuration(60 * 60 + 60))
 console.log(formatDuration(1222222))
