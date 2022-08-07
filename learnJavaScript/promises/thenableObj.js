@@ -2,10 +2,15 @@ class Thenable {
   constructor(num) {
     this.num = num;
   }
-  then(resolve, reject) {
+  then(resolve, reject) {                           // это не тот же самый then, что и (*)
+                                                    // это метод объекта, а на строке (*)
+                                                    // находится внутренняя функция JS
     console.log(arguments);
     
-    setTimeout(() => resolve(this.num * 2), 1000);
+    setTimeout(() => resolve(this.num * 2), 1000);  //ТУТ ВЫЗЫВАЕТСЯ ИМЕННО resolve, 
+                                                    //на learnjs нет ошибки!
+                                                    //затем этот resolve передаёт результат в скобках
+                                                    //в сonsole.log/alert
   }
 }
 
@@ -13,7 +18,8 @@ new Promise(resolve => resolve(1))
   .then(result => {
     return new Thenable(result); 
   })
-  .then(console.log);
+  .then(console.log);                               // (*)
+  //.then(alert);
 
 
 // /****************************** */ COMPARE WITH /****************************** */
